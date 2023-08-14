@@ -1,0 +1,9 @@
+8080 - login
+8081 - register
+8082 - selectports
+8083 - availableflights
+8084 - passengerinfo
+8085 - reservationinfo
+8086 - pnr search
+8087 - profile
+8088 - user management

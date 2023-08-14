@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package com.sumit.playjava;
+
+message FlightM {
+  int32 flightId = 1;
+  int32 businessCapacity = 2;
+  double businessPriceAdult = 3;
+  double businessPriceChild = 4;
+  double businessPriceInfant = 5;
+  int32 economyCapacity = 6;
+  double economyPriceAdult = 7;
+  double economyPriceChild = 8;
+  double economyPriceInfant = 9;
+  string plane = 10;
+  string company = 11;
+  string fromPort = 12;
+  string toPort = 13;
+  string flightDate = 14;
+  string flightTime = 15;
+  string arrivalTime = 16;
+  string fromPortCode = 17;
+  string toPortCode = 18;
+}
+
+message FlightRequest {
+  // Add any request parameters you need here
+  // For example, you can add "fromPort", "toPort", "flightDate", etc.
+  string fromPort = 1;
+  string toPort = 2;
+  string flightDate = 3;
+  int32 adultCount = 4;
+  int32 childCount = 5;
+  int32 infantCount = 6;
+}
+
+message FlightResponse {
+  repeated FlightM flights = 1;
+}
+
+service FlightService {
+
+  rpc GetFlights (FlightRequest) returns (FlightResponse);
+}
